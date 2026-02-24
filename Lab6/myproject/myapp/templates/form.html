@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>แบบฟอร์มบันทึกข้อมูลประชากร</title>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0">
+                <div class="card-header text-white text-center py-3" style="background-color: #0d6efd;">
+                    <h5 class="mb-0 fw-bold">แบบฟอร์มบันทึกข้อมูลประชากร</h5>
+                </div>
+                <div class="card-body p-4 bg-white">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">ชื่อประชากร</label>
+                            <input type="text" name="fullname" class="form-control" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">อายุ</label>
+                            <input type="number" name="age" class="form-control" placeholder="กรอกข้อมูลอายุเป็นตัวเลข" required>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-success flex-grow-1 fw-bold">ลงทะเบียน</button>
+                            <button type="reset" class="btn btn-danger flex-grow-1 fw-bold">ล้างข้อมูล</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

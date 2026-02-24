@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>หน้าแรกของเว็บไซต์</title>
+{% endblock %}
+
+{% block content %}
+<div class="bg-dark text-secondary px-4 py-5 text-center shadow-lg mb-5" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x400'); background-size: cover;">
+  <div class="py-5">
+    <h1 class="display-5 fw-bold text-white">ยินดีต้อนรับสู่เว็บไซต์ของรายวิชา ICT12367</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="fs-5 mb-4 text-light">การใช้กรอบงานสำหรับการพัฒนาเว็บแอปพลิเคชันเพื่อความมั่นคงปลอดภัย</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row mb-5">
+        {% for item in "สินค้า,บริการ,เกี่ยวกับเรา"|split:"," %}
+        <div class="col-12 mb-3">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body d-flex align-items-center gap-4 p-4">
+                    <img src="https://via.placeholder.com/150x100" class="rounded shadow-sm" alt="{{ item }}">
+                    <div>
+                        <h4 class="fw-bold">{{ item }}</h4>
+                        <p class="text-muted mb-0">รายละเอียดเนื้อหา {{ item }} ของรายวิชา ICT12367 แสดงที่นี่...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="card shadow-lg border-0 mb-5 overflow-hidden">
+        <div class="card-header bg-primary text-white py-3">
+            <h5 class="mb-0 text-center"><i class="bi bi-geo-alt-fill me-2"></i>แสดงแผนที่ใน Google Map</h5>
+        </div>
+        <div class="ratio ratio-21x9">
+            <iframe src="https://www.google.com/maps/embed?..." allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}
